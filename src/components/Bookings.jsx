@@ -16,6 +16,7 @@ export default function Bookings({ url, userId }) {
       });
   };
   useEffect(() => {
+    console.log(userId)
     axios
       .get(`${url}?userId=${userId}`)
       .then((res) => {
@@ -24,7 +25,7 @@ export default function Bookings({ url, userId }) {
       .catch(() => {
         alert("Something went wrong");
       });
-  });
+  },[fetch]);
 
   return (
     <div className="w-full grid grid-cols-3 gap-8 place-items-center self-start mt-24">
