@@ -7,11 +7,15 @@ export default function Navbar({ userId, setUserId }) {
         <h1 className="font-Gloria text-3xl text-black opacity-100">BonStay</h1>
         {userId && (
           <div className="flex gap-3 font-bold text-xl justify-center items-center">
-            <div>Home</div>
+            <Link to="/home">
+              <div>Home</div>
+            </Link>
             <Link to="/hotels">
                 <div className="hover:cursor-pointer">Hotels</div>
             </Link>
-            <div>Bookings</div>
+            <Link to="/bookings">
+              <div>Bookings</div>
+            </Link>
             <div className="hover:cursor-pointer" onClick={() => setUserId("")}>
               Logout
             </div>

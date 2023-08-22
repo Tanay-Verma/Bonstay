@@ -4,6 +4,7 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import Hotels from "./components/Hotels";
 import BookRoom from "./components/BookRoom";
+import Bookings from "./components/Bookings";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import ProtectedRoutes from "./utils/ProtectedRoutes";
@@ -32,13 +33,21 @@ function App() {
                   path="/login"
                   element={<Login url={urls.users} setUserId={setUserId} />}
                 />
+
                 <Route element={<ProtectedRoutes userId={userId} />}>
                   <Route path="/home" element={<Home />} />
                   <Route
                     path="/hotels"
                     element={<Hotels url={urls.hotels} />}
                   />
-                  <Route path="/bookRoom/:hotelName" element={<BookRoom/>}/>
+                  <Route
+                    path="/bookRoom/:hotelName/:hotelId"
+                    element={<BookRoom url={urls.bookings} userId={userId} />}
+                  />
+                  <Route
+                    path="/bookings"
+                    element={<Bookings userId={userId} url={urls.bookings} />}
+                  />
                 </Route>
               </Route>
             </Routes>

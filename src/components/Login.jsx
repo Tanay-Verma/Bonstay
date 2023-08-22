@@ -115,6 +115,7 @@ export default function Login({ url, setUserId }) {
                 type="email"
                 placeholder="Email"
                 name="email"
+                id="email"
                 value={userData.email}
                 onChange={handleChange}
                 className="rounded-lg p-1 col-span-9"
@@ -149,6 +150,7 @@ export default function Login({ url, setUserId }) {
                 type="password"
                 placeholder="Password"
                 name="password"
+                id="password"
                 value={userData.password}
                 onChange={handleChange}
                 className="rounded-lg p-1 col-span-9"

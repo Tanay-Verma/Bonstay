@@ -15,9 +15,10 @@ export default function Hotels({ url }) {
       });
   }, [url]);
 
+
   return (
     <>
-      <div className="w-full p-4 h-full flex flex-col gap-10">
+      <div className="w-full p-4 flex flex-col gap-10">
         {hotels.map((hotel) => {
           return (
             <div
@@ -38,10 +39,10 @@ export default function Hotels({ url }) {
               </div>
               <div className="border w-1/5 grid grid-crows-3 p-4 gap-2">
                 <button className="rounded-lg bg-sky-400 text-sky-50 text-lg font-bold">
-                  <Link to={`/bookRoom/${hotel.hotelName}`}>Book A Room</Link>
+                  <Link to={`/bookRoom/${hotel.hotelName}/${hotel.id}`}>Book A Room</Link>
                 </button>
                 <button className="rounded-lg bg-sky-400 text-sky-50 text-lg font-bold">
-                  Add Review
+                  <Link >Add Review</Link>
                 </button>
                 <button className="rounded-lg bg-sky-400 text-sky-50 text-lg font-bold">
                   View Review
