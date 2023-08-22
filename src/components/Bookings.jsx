@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 export default function Bookings({ url, userId }) {
   const [bookingsData, setBookingsData] = useState([]);
   const [fetch, setFetch] = useState(false);
@@ -62,7 +63,7 @@ export default function Bookings({ url, userId }) {
             </div>
             <div className="grid grid-rows-2 gap-2 font-bold">
               <button className="rounded-lg bg-sky-400 text-sky-50 text-lg">
-                Reschedule
+                <Link to={`/reschedule/${booking.id}`}>Reschedule</Link>
               </button>
               <button
                 className="rounded-lg bg-sky-400 text-sky-50 text-lg"

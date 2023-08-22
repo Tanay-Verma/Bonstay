@@ -42,10 +42,10 @@ export default function Hotels({ url }) {
                   <Link to={`/bookRoom/${hotel.hotelName}/${hotel.id}`}>Book A Room</Link>
                 </button>
                 <button className="rounded-lg bg-sky-400 text-sky-50 text-lg font-bold">
-                  <Link >Add Review</Link>
+                  <Link to={`/addReview/${hotel.hotelName}/${hotel.id}`}>Add Review</Link>
                 </button>
                 <button className="rounded-lg bg-sky-400 text-sky-50 text-lg font-bold">
-                  View Review
+                  <Link to={`/viewReview/${hotel.hotelName}/${hotel.id}`}>View Review</Link>
                 </button>
               </div>
             </div>
